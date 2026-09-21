@@ -57,6 +57,12 @@ export default function ContactForm() {
           <textarea rows="4" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} placeholder="Any specific questions?" style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc', resize: 'vertical' }}></textarea>
         </div>
         <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>Submit Details</button>
+        <div style={{ textAlign: 'center', marginTop: '5px' }}>
+          <p className="text-muted" style={{ marginBottom: '10px', fontSize: '0.9rem' }}>Or skip the form and call us directly:</p>
+          <a href="tel:+919630857026" className="btn btn-secondary" style={{ display: 'block', textDecoration: 'none' }}>
+            📞 +91-9630857026
+          </a>
+        </div>
       </form>
     </div>
   );

@@ -96,9 +96,14 @@ export default function CourseList({ trendingOnly = false }) {
                   </button>
                 )}
               </div>
-              <button onClick={() => openEnquiry(course.title)} className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>
-                Join Now
-              </button>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
+                <button onClick={() => openEnquiry(course.title)} className="btn btn-primary" style={{ flex: 1, padding: '10px 0' }}>
+                  Enquire
+                </button>
+                <a href="tel:+919630857026" className="btn btn-secondary" style={{ flex: 1, textAlign: 'center', padding: '10px 0', textDecoration: 'none' }}>
+                  Call
+                </a>
+              </div>
             </div>
           </div>
         ))}

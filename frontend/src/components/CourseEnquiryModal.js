@@ -82,9 +82,16 @@ export default function CourseEnquiryModal({ isOpen, onClose, selectedCourse }) 
               onChange={(e) => setFormData({...formData, message: e.target.value})}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>
+          <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px', marginBottom: '15px' }}>
             Submit Enquiry
           </button>
+          
+          <div style={{ textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '15px' }}>
+            <p className="text-muted" style={{ marginBottom: '10px', fontSize: '0.9rem' }}>Or skip the form and call us directly:</p>
+            <a href="tel:+919630857026" className="btn btn-secondary" style={{ display: 'block', textDecoration: 'none' }}>
+              📞 +91-9630857026
+            </a>
+          </div>
         </form>
       </div>
     </div>

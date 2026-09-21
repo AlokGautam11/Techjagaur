@@ -40,23 +40,40 @@ export default function InternshipBanner() {
               Kickstart your career with our hands-on, live-project based internship program. Get mentored by industry experts and build a stunning portfolio without needing any prior experience.
             </p>
             
-            <button 
-              onClick={() => setIsOpen(true)}
-              className="btn" 
-              style={{ 
-                background: 'white', 
-                color: 'var(--primary-color)', 
-                padding: '15px 40px', 
-                fontSize: '1.1rem',
-                borderRadius: '50px',
-                fontWeight: 'bold',
-                boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
-                position: 'relative',
-                zIndex: 1
-              }}
-            >
-              Grab Training Cum Internship
-            </button>
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
+              <button 
+                onClick={() => setIsOpen(true)}
+                className="btn" 
+                style={{ 
+                  background: 'white', 
+                  color: 'var(--primary-color)', 
+                  padding: '15px 40px', 
+                  fontSize: '1.1rem',
+                  borderRadius: '50px',
+                  fontWeight: 'bold',
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.1)'
+                }}
+              >
+                Grab Training Cum Internship
+              </button>
+              <a 
+                href="tel:+919630857026"
+                className="btn" 
+                style={{ 
+                  background: 'rgba(255,255,255,0.2)', 
+                  color: 'white', 
+                  border: '2px solid white',
+                  padding: '13px 40px', 
+                  fontSize: '1.1rem',
+                  borderRadius: '50px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  display: 'inline-block'
+                }}
+              >
+                Call Us Directly
+              </a>
+            </div>
           </div>
         </div>
       </section>
