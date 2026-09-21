@@ -21,7 +21,7 @@ export default function AdminSettings() {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch('http://localhost:5000/api/users/change-password', {
+      const res = await fetch('/api/users/change-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

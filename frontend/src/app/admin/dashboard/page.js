@@ -13,8 +13,8 @@ export default function AdminDashboard() {
 
         // We fetch the full arrays to get the counts
         const [coursesRes, enquiriesRes] = await Promise.all([
-          fetch('http://localhost:5000/api/courses'),
-          fetch('http://localhost:5000/api/enquiries', { headers })
+          fetch('/api/courses'),
+          fetch('/api/enquiries', { headers })
         ]);
 
         const courses = await coursesRes.json();

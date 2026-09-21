@@ -15,7 +15,7 @@ export default function CoursesManager() {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/courses');
+      const res = await fetch('/api/courses');
       const data = await res.json();
       if (res.ok) setCourses(data);
     } catch (error) {
@@ -38,7 +38,7 @@ export default function CoursesManager() {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch('http://localhost:5000/api/courses', {
+      const res = await fetch('/api/courses', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData, // Sending as FormData because it contains a file
@@ -59,7 +59,7 @@ export default function CoursesManager() {
     if (!window.confirm('Are you sure you want to delete this course?')) return;
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/courses/${id}`, {
+      await fetch(`/api/courses/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

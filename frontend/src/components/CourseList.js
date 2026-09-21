@@ -20,7 +20,7 @@ export default function CourseList({ trendingOnly = false }) {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/courses');
+        const res = await fetch('/api/courses');
         const data = await res.json();
         if (res.ok) {
           setCourses(data);

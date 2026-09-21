@@ -13,7 +13,7 @@ export default function EnquiriesManager() {
   const fetchEnquiries = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch('http://localhost:5000/api/enquiries', {
+      const res = await fetch('/api/enquiries', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ export default function EnquiriesManager() {
     
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/enquiries/${id}`, {
+      await fetch(`/api/enquiries/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
