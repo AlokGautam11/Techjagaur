@@ -1,0 +1,23 @@
+# Techjaguar Academy Rewa
+
+Techjaguar Academy is the premier IT and coding institute located in Rewa, Madhya Pradesh. 
+We specialize in hands-on, live-project based training designed to make students job-ready.
+
+## Programs Offered
+- Full Stack Web Development (MERN Stack)
+- Python & Data Science
+- Cybersecurity Basics
+- C & C++ Programming
+- Java Masterclass
+- Robotics & IoT
+
+## Training Cum Internship
+We offer a dedicated internship program where students build a stunning portfolio while being mentored by industry experts.
+
+## Contact Information
+- Phone: +91-XXXXXXXXXX
+- Email: info@techjaguar.com
+- Location: Azad Nagar, Opposite Bajrang Nagar Gate, Rewa, Madhya Pradesh 486001
+
+## Target Audience
+Students, graduates, and professionals in Central India seeking practical tech skills and internships.
