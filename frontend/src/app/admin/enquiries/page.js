@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 export default function EnquiriesManager() {
   const [enquiries, setEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filterCourse, setFilterCourse] = useState('All');
 
   useEffect(() => {
     fetchEnquiries();
@@ -44,9 +45,31 @@ export default function EnquiriesManager() {
 
   if (loading) return <div>Loading enquiries...</div>;
 
+  // Extract unique courses from existing enquiries to populate the filter dropdown dynamically
+  const uniqueCourses = ['All', ...new Set(enquiries.map(enq => enq.courseInterested || enq.course || 'General Enquiry'))];
+
+  const filteredEnquiries = filterCourse === 'All' 
+    ? enquiries 
+    : enquiries.filter(enq => (enq.courseInterested || enq.course || 'General Enquiry') === filterCourse);
+
   return (
     <div>
-      <h1 style={{ color: 'var(--primary-color)', marginBottom: '30px' }}>Manage Enquiries</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+        <h1 style={{ color: 'var(--primary-color)', margin: 0 }}>Manage Enquiries</h1>
+        
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <label style={{ fontWeight: '500' }}>Filter by Course:</label>
+          <select 
+            value={filterCourse} 
+            onChange={(e) => setFilterCourse(e.target.value)}
+            style={{ padding: '10px', borderRadius: '4px', border: '1px solid var(--border-light)', minWidth: '200px' }}
+          >
+            {uniqueCourses.map(course => (
+              <option key={course} value={course}>{course}</option>
+            ))}
+          </select>
+        </div>
+      </div>
       
       <div style={{ background: 'white', borderRadius: '8px', boxShadow: 'var(--shadow-sm)', overflow: 'hidden' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -60,12 +83,12 @@ export default function EnquiriesManager() {
             </tr>
           </thead>
           <tbody>
-            {enquiries.length === 0 ? (
+            {filteredEnquiries.length === 0 ? (
               <tr>
                 <td colSpan="5" style={{ padding: '20px', textAlign: 'center' }}>No enquiries found.</td>
               </tr>
             ) : (
-              enquiries.map((enq) => (
+              filteredEnquiries.map((enq) => (
                 <tr key={enq._id} style={{ borderBottom: '1px solid var(--border-light)' }}>
                   <td style={{ padding: '15px' }}>{new Date(enq.createdAt).toLocaleDateString()}</td>
                   <td style={{ padding: '15px', fontWeight: '500' }}>{enq.name}</td>
