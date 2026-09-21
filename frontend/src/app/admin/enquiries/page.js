@@ -74,7 +74,7 @@ export default function EnquiriesManager() {
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{enq.email}</div>
                   </td>
                   <td style={{ padding: '15px' }}>
-                    {enq.course || 'General Enquiry'}
+                    {enq.courseInterested || enq.course || 'General Enquiry'}
                     {enq.message && <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '5px' }}>Msg: {enq.message}</div>}
                   </td>
                   <td style={{ padding: '15px' }}>
