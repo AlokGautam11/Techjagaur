@@ -18,7 +18,7 @@ export default function CourseEnquiryModal({ isOpen, onClose, selectedCourse }) 
       const res = await fetch('/api/enquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, course: selectedCourse })
+        body: JSON.stringify({ ...formData, courseInterested: selectedCourse })
       });
       if (res.ok) {
         alert('Enquiry Submitted Successfully! We will contact you soon.');
