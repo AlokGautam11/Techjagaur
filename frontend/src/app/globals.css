@@ -157,6 +157,16 @@ p { margin-bottom: 1rem; }
   color: var(--primary-light);
 }
 
+.nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-call-btn, .nav-enquire-btn {
+  padding: 10px 20px;
+}
+
 /* Utilities for Layout */
 .section {
   padding: 80px 0;
@@ -293,6 +303,20 @@ p { margin-bottom: 1rem; }
   .nav-links {
     display: none; /* Hide standard links on mobile */
   }
+
+  .nav-logo {
+    font-size: 1.3rem !important; /* Smaller logo on mobile */
+  }
+
+  .nav-actions {
+    gap: 8px; /* Tighter gap */
+  }
+
+  .nav-call-btn, .nav-enquire-btn {
+    padding: 8px 12px; /* Smaller padding */
+    font-size: 0.85rem; /* Smaller text */
+  }
+  
   
   .section {
     padding: 40px 0;
