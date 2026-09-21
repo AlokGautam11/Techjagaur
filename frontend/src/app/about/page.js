@@ -7,16 +7,16 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <section className="section" style={{ backgroundColor: 'var(--primary-color)', color: 'var(--background-white)', padding: '60px 0', textAlign: 'center' }}>
+      <section className="section" style={{ padding: '60px 0', textAlign: 'center' }}>
         <div className="container">
-          <h1 style={{ color: 'var(--background-white)', marginBottom: '15px' }}>About Techjaguar Academy</h1>
-          <p style={{ opacity: 0.9, fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
+          <h1 style={{ color: 'var(--primary-color)', marginBottom: '15px' }}>About Techjaguar Academy</h1>
+          <p className="text-muted" style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
             Building the next generation of engineers in Rewa through practical, hands-on learning.
           </p>
         </div>
       </section>
 
-      <section className="section" style={{ backgroundColor: 'var(--background-white)' }}>
+      <section className="section">
         <div className="container flex-responsive" style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>
             <h2 style={{ marginBottom: '20px', color: 'var(--primary-color)' }}>Our Mission & Vision</h2>
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section" style={{ backgroundColor: 'var(--background-light)' }}>
+      <section className="section">
         <div className="container text-center">
           <h2 style={{ marginBottom: '40px' }}>Why We Stand Out</h2>
           <div className="responsive-grid">

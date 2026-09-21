@@ -99,19 +99,19 @@ export default function Home() {
       </section>
 
       {/* Quick Enquiry Section */}
-      <section id="contact" className="section" style={{ backgroundColor: 'var(--primary-color)', color: 'var(--background-white)' }}>
+      <section id="contact" className="section">
         <div className="container flex-responsive" style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>
-            <h2 style={{ color: 'var(--background-white)', marginBottom: '20px' }}>Start Your Tech Journey Today</h2>
-            <p style={{ marginBottom: '30px', opacity: 0.9 }}>
+            <h2 style={{ color: 'var(--primary-color)', marginBottom: '20px' }}>Start Your Tech Journey Today</h2>
+            <p className="text-muted" style={{ marginBottom: '30px', fontSize: '1.1rem' }}>
               Have questions about our syllabus, batches, or fees? Drop your details and our team will get back to you immediately.
             </p>
-            <ul style={{ listStyle: 'none', padding: 0, opacity: 0.9 }}>
+            <ul style={{ listStyle: 'none', padding: 0 }} className="text-muted">
               <li style={{ marginBottom: '10px' }}>📍 Azad Nagar (Opp. Bajrang Nagar Gate), Rewa</li>
               <li style={{ marginBottom: '10px' }}>📞 +91-9630857026</li>
             </ul>
           </div>
-          <div style={{ flex: 1, backgroundColor: 'var(--background-white)', padding: '40px', borderRadius: '8px', color: 'var(--text-main)' }}>
+          <div style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.5)', padding: '40px', borderRadius: '12px', color: 'var(--text-main)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)' }}>
             <h3 style={{ marginBottom: '20px', color: 'var(--primary-color)' }}>Quick Enquiry</h3>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <input type="text" placeholder="Your Name" style={{ padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }} required />
