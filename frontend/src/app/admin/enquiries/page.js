@@ -159,7 +159,14 @@ export default function EnquiriesManager() {
               </tr>
             ) : (
               filteredEnquiries.map((enq) => (
-                <tr key={enq._id} style={{ borderBottom: '1px solid var(--border-light)' }}>
+                <tr 
+                  key={enq._id} 
+                  style={{ 
+                    borderBottom: '1px solid var(--border-light)',
+                    backgroundColor: enq.status === 'Contacted' ? '#f0fdf4' : 'transparent',
+                    transition: 'background-color 0.3s ease'
+                  }}
+                >
                   <td style={{ padding: '15px' }}>{new Date(enq.createdAt).toLocaleDateString()}</td>
                   <td style={{ padding: '15px', fontWeight: '500' }}>{enq.name}</td>
                   <td style={{ padding: '15px' }}>
@@ -171,27 +178,24 @@ export default function EnquiriesManager() {
                     {enq.message && <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '5px' }}>Msg: {enq.message}</div>}
                   </td>
                   <td style={{ padding: '15px' }}>
-                    <span style={{ 
-                      padding: '4px 8px', 
-                      borderRadius: '12px', 
-                      fontSize: '0.85rem', 
-                      fontWeight: 'bold',
-                      backgroundColor: enq.status === 'Contacted' ? '#e8f5e9' : '#fff3e0',
-                      color: enq.status === 'Contacted' ? '#2e7d32' : '#ef6c00'
-                    }}>
-                      {enq.status === 'Contacted' ? 'Contacted' : 'Pending'}
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <input 
+                        type="checkbox" 
+                        checked={enq.status === 'Contacted'}
+                        onChange={() => toggleStatus(enq._id, enq.status)}
+                        style={{ width: '18px', height: '18px', cursor: 'pointer', accentColor: '#16a34a' }}
+                      />
+                      <span style={{ 
+                        fontSize: '0.9rem', 
+                        fontWeight: '500',
+                        color: enq.status === 'Contacted' ? '#16a34a' : '#d97706'
+                      }}>
+                        {enq.status === 'Contacted' ? 'Contacted' : 'Pending'}
+                      </span>
+                    </div>
                   </td>
                   <td style={{ padding: '15px' }}>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <button 
-                        onClick={() => toggleStatus(enq._id, enq.status)} 
-                        style={{ color: enq.status === 'Contacted' ? '#f57c00' : '#388e3c', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer' }}
-                      >
-                        {enq.status === 'Contacted' ? 'Mark Pending' : 'Mark Contacted'}
-                      </button>
-                      <button onClick={() => deleteEnquiry(enq._id)} style={{ color: 'red', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer' }}>Delete</button>
-                    </div>
+                    <button onClick={() => deleteEnquiry(enq._id)} style={{ color: 'red', background: 'none', border: 'none', textDecoration: 'underline', cursor: 'pointer' }}>Delete</button>
                   </td>
                 </tr>
               ))
