@@ -50,7 +50,7 @@ export default function Home() {
             <h2>Why Choose Techjaguar?</h2>
             <p className="text-muted">We focus on practical skills that employers actually need.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+          <div className="responsive-grid">
             {/* Feature 1 */}
             <div style={{ backgroundColor: 'var(--background-white)', padding: '30px', borderRadius: '8px', boxShadow: 'var(--shadow-sm)' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '15px' }}>Expert Instructors</h3>

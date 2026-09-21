@@ -175,6 +175,12 @@ p { margin-bottom: 1rem; }
 .text-center { text-align: center; }
 .text-muted { color: var(--text-muted); }
 
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
 /* Course Cards */
 .course-grid {
   display: grid;

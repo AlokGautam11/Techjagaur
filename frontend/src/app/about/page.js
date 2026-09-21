@@ -46,7 +46,7 @@ export default function AboutPage() {
       <section className="section" style={{ backgroundColor: 'var(--background-light)' }}>
         <div className="container text-center">
           <h2 style={{ marginBottom: '40px' }}>Why We Stand Out</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+          <div className="responsive-grid">
             <div style={{ backgroundColor: 'var(--background-white)', padding: '30px', borderRadius: '8px', boxShadow: 'var(--shadow-sm)' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '15px' }}>Expert Mentorship</h3>
               <p className="text-muted">Learn directly from professionals who have worked in the tech industry.</p>
