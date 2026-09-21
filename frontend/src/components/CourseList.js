@@ -57,6 +57,17 @@ export default function CourseList({ trendingOnly = false, initialCourses = [] }
                 <span>⏱ {course.duration}</span>
                 <span>👨‍🏫 {course.instructor}</span>
               </div>
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px', padding: '10px', background: 'rgba(79, 70, 229, 0.05)', borderRadius: '8px' }}>
+                <span style={{ textDecoration: 'line-through', color: '#999', fontSize: '1rem' }}>₹{course.price || 0}</span>
+                <span style={{ color: 'var(--primary-color)', fontWeight: '900', fontSize: '1.4rem' }}>₹{course.offeredPrice || course.price || 0}</span>
+                {course.price > 0 && course.offeredPrice > 0 && course.price > course.offeredPrice && (
+                   <span style={{ background: '#10b981', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold' }}>
+                     Save ₹{course.price - course.offeredPrice}
+                   </span>
+                )}
+              </div>
+
               <div className="course-syllabus">
                 <strong>Key Syllabus:</strong>
                 <ul>

@@ -27,6 +27,10 @@ const courseSchema = new mongoose.Schema({
     price: {
         type: Number,
         default: 0
+    },
+    offeredPrice: {
+        type: Number,
+        default: 0
     }
 }, {
     timestamps: true

@@ -43,6 +43,9 @@ export default function AdminLayout({ children }) {
           <Link href="/admin/courses" style={{ padding: '10px', borderRadius: '4px', backgroundColor: pathname.startsWith('/admin/courses') ? 'rgba(255,255,255,0.1)' : 'transparent', color: 'white' }}>
             📚 Manage Courses
           </Link>
+          <Link href="/admin/offers" style={{ padding: '10px', borderRadius: '4px', backgroundColor: pathname.startsWith('/admin/offers') ? 'rgba(255,255,255,0.1)' : 'transparent', color: 'white' }}>
+            🎁 Manage Offers
+          </Link>
           <Link href="/admin/enquiries" style={{ padding: '10px', borderRadius: '4px', backgroundColor: pathname.startsWith('/admin/enquiries') ? 'rgba(255,255,255,0.1)' : 'transparent', color: 'white' }}>
             📩 Enquiries
           </Link>
