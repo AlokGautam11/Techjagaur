@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import CourseList from '@/components/CourseList';
 import InternshipBanner from '@/components/InternshipBanner';
+import ContactForm from '@/components/ContactForm';
 import dbConnect from '@/lib/db';
 import Course from '@/models/Course';
 
@@ -117,27 +118,7 @@ export default async function Home() {
               <li style={{ marginBottom: '10px' }}>📞 +91-9630857026</li>
             </ul>
           </div>
-          <div style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.5)', padding: '40px', borderRadius: '12px', color: 'var(--text-main)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)' }}>
-            <h3 style={{ marginBottom: '20px', color: 'var(--primary-color)' }}>Quick Enquiry</h3>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <input type="text" placeholder="Your Name" style={{ padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }} required />
-              <input type="email" placeholder="Your Email" style={{ padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }} required />
-              <input type="tel" placeholder="Phone Number" style={{ padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }} required />
-              <select style={{ padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }}>
-                <option>Interested in (Course)</option>
-                <option>Full Stack Web Development</option>
-                <option>Python & Data Science</option>
-                <option>Cybersecurity</option>
-              </select>
-              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>Submit Enquiry</button>
-              <div style={{ textAlign: 'center', marginTop: '5px' }}>
-                <p className="text-muted" style={{ marginBottom: '10px', fontSize: '0.9rem' }}>Or skip the form and call us directly:</p>
-                <a href="tel:+919630857026" className="btn btn-secondary" style={{ display: 'block', textDecoration: 'none' }}>
-                  📞 +91-9630857026
-                </a>
-              </div>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </section>
     </main>

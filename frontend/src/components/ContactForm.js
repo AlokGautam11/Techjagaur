@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', course: 'General Enquiry', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', courseInterested: 'General Enquiry', message: '' });
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ export default function ContactForm() {
       });
       if (res.ok) {
         alert('Your enquiry has been submitted successfully!');
-        setFormData({ name: '', email: '', phone: '', course: 'General Enquiry', message: '' });
+        setFormData({ name: '', email: '', phone: '', courseInterested: 'General Enquiry', message: '' });
       } else {
         alert('Failed to submit enquiry. Please check the fields.');
       }
@@ -42,7 +42,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label style={{ display: 'block', marginBottom: '5px', fontWeight: '500' }}>Interested Course</label>
-          <select value={formData.course} onChange={(e) => setFormData({...formData, course: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }}>
+          <select value={formData.courseInterested} onChange={(e) => setFormData({...formData, courseInterested: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '4px', border: '1px solid #ccc' }}>
             <option value="General Enquiry">Select a Course / General Enquiry</option>
             <option value="Full Stack Web Development">Full Stack Web Development</option>
             <option value="Python & Data Science">Python & Data Science</option>
