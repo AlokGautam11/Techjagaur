@@ -70,9 +70,9 @@ export default function CourseList({ trendingOnly = false }) {
               src={course.thumbnail} 
               alt={course.title} 
               width={400} 
-              height={200}
+              height={150}
               className="course-img" 
-              style={{ height: '200px', objectFit: 'cover', width: '100%' }} 
+              style={{ height: '150px', objectFit: 'cover', width: '100%' }} 
             />
             <div className="course-content">
               <h3 className="course-title">{course.title}</h3>

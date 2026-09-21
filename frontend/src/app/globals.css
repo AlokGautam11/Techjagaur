@@ -192,7 +192,7 @@ p { margin-bottom: 1rem; }
 
 .course-img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -316,7 +316,7 @@ p { margin-bottom: 1rem; }
   }
 
   .course-img {
-    height: 180px;
+    height: 130px;
   }
 }
 

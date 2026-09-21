@@ -3,12 +3,10 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer style={{ 
-      backgroundColor: 'rgba(255, 255, 255, 0.7)', 
-      backdropFilter: 'blur(10px)', 
-      borderTop: '1px solid rgba(255, 255, 255, 0.5)',
+      backgroundColor: 'transparent',
+      borderTop: '1px solid rgba(0, 0, 0, 0.05)',
       padding: '25px 0 10px 0',
-      marginTop: 'auto',
-      boxShadow: '0 -4px 30px rgba(0, 0, 0, 0.05)'
+      marginTop: 'auto'
     }}>
       <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '15px' }}>
         
@@ -27,7 +25,6 @@ export default function Footer() {
             <li><Link href="/" className="footer-link">Home</Link></li>
             <li><Link href="/courses" className="footer-link">All Courses</Link></li>
             <li><Link href="/contact" className="footer-link">Contact & Admissions</Link></li>
-            <li><Link href="/admin/login" className="footer-link">Admin Portal</Link></li>
           </ul>
         </div>
 
