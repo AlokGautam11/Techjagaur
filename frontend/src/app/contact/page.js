@@ -32,7 +32,7 @@ export default function ContactPage() {
             </div>
             <div style={{ marginBottom: '20px' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Phone:</h3>
-              <p className="text-muted">+91-XXXXXXXXXX</p>
+              <p className="text-muted">+91-9630857026</p>
             </div>
             <div style={{ marginBottom: '20px' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Email:</h3>

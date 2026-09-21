@@ -108,7 +108,7 @@ export default function Home() {
             </p>
             <ul style={{ listStyle: 'none', padding: 0, opacity: 0.9 }}>
               <li style={{ marginBottom: '10px' }}>📍 Azad Nagar (Opp. Bajrang Nagar Gate), Rewa</li>
-              <li style={{ marginBottom: '10px' }}>📞 +91-XXXXXXXXXX</li>
+              <li style={{ marginBottom: '10px' }}>📞 +91-9630857026</li>
             </ul>
           </div>
           <div style={{ flex: 1, backgroundColor: 'var(--background-white)', padding: '40px', borderRadius: '8px', color: 'var(--text-main)' }}>
