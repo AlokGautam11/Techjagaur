@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import CourseList from '@/components/CourseList';
 import InternshipBanner from '@/components/InternshipBanner';
+import dbConnect from '@/lib/db';
+import Course from '@/models/Course';
 
 export const metadata = {
   title: 'Techjaguar Academy Rewa | Best IT & Coding Courses',
@@ -8,7 +10,11 @@ export const metadata = {
   keywords: 'Coding Rewa, IT Academy Rewa, Best Computer Institute, Python Course Rewa',
 };
 
-export default function Home() {
+export default async function Home() {
+  await dbConnect();
+  const coursesData = await Course.find({}).lean();
+  const initialCourses = JSON.parse(JSON.stringify(coursesData));
+
   return (
     <main>
       {/* Hero Section */}
@@ -80,7 +86,7 @@ export default function Home() {
             <p className="text-muted">Master the most in-demand skills in the industry.</p>
           </div>
           
-          <CourseList trendingOnly={true} />
+          <CourseList trendingOnly={true} initialCourses={initialCourses} />
           
           <div className="text-center" style={{ marginTop: '40px' }}>
             <Link href="/courses" className="btn btn-secondary" style={{ padding: '15px 40px', fontSize: '1.1rem' }}>See All Courses</Link>

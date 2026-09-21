@@ -1,4 +1,6 @@
 import CourseList from '@/components/CourseList';
+import dbConnect from '@/lib/db';
+import Course from '@/models/Course';
 
 export const metadata = {
   title: 'All Courses | Techjaguar Academy Rewa',
@@ -6,7 +8,11 @@ export const metadata = {
   keywords: 'IT Courses Rewa, Coding Classes, Learn Python, Learn AI, Full Stack Course',
 };
 
-export default function CoursesPage() {
+export default async function CoursesPage() {
+  await dbConnect();
+  const coursesData = await Course.find({}).lean();
+  const initialCourses = JSON.parse(JSON.stringify(coursesData));
+
   return (
     <main>
       {/* Courses Header */}
@@ -22,7 +28,7 @@ export default function CoursesPage() {
       {/* Course List */}
       <section className="section">
         <div className="container">
-          <CourseList />
+          <CourseList initialCourses={initialCourses} />
         </div>
       </section>
     </main>

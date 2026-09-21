@@ -8,34 +8,15 @@ import dynamic from 'next/dynamic';
 const CourseEnquiryModal = dynamic(() => import('./CourseEnquiryModal'), { ssr: false });
 const SyllabusModal = dynamic(() => import('./SyllabusModal'), { ssr: false });
 
-export default function CourseList({ trendingOnly = false }) {
-  const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function CourseList({ trendingOnly = false, initialCourses = [] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
   
   const [isSyllabusModalOpen, setIsSyllabusModalOpen] = useState(false);
   const [selectedSyllabus, setSelectedSyllabus] = useState([]);
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const res = await fetch('/api/courses');
-        const data = await res.json();
-        if (res.ok) {
-          setCourses(data);
-        }
-      } catch (error) {
-        console.error('Failed to fetch courses:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCourses();
-  }, []);
-
   // For the homepage "trending", we'll just slice the first 3 courses
-  const displayCourses = trendingOnly ? courses.slice(0, 3) : courses;
+  const displayCourses = trendingOnly ? initialCourses.slice(0, 3) : initialCourses;
 
   const openEnquiry = (courseTitle) => {
     setSelectedCourse(courseTitle);
@@ -48,11 +29,7 @@ export default function CourseList({ trendingOnly = false }) {
     setIsSyllabusModalOpen(true);
   };
 
-  if (loading) {
-    return <div style={{ textAlign: 'center', padding: '40px' }}>Loading courses...</div>;
-  }
-
-  if (courses.length === 0) {
+  if (initialCourses.length === 0) {
     return (
       <div style={{ textAlign: 'center', padding: '40px', backgroundColor: 'var(--background-light)', borderRadius: '8px' }}>
         <h3 style={{ color: 'var(--primary-color)' }}>New Courses Coming Soon!</h3>
