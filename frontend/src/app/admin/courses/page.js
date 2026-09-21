@@ -35,18 +35,11 @@ export default function CoursesManager() {
     let syllabusArray = [];
     if (syllabusString) {
       syllabusArray = syllabusString.split(',').map(item => item.trim());
+      formData.set('syllabus', JSON.stringify(syllabusArray));
     }
-
-    const payload = {
-      title: formData.get('title'),
-      instructor: formData.get('instructor'),
-      duration: formData.get('duration'),
-      price: Number(formData.get('price')) || 0,
-      offeredPrice: Number(formData.get('offeredPrice')) || 0,
-      syllabus: syllabusArray,
-      description: formData.get('description'),
-      thumbnail: formData.get('thumbnail') || '/images/default-course.jpg'
-    };
+    
+    // We keep existing thumbnail URL in the form if editing, 
+    // unless a new file is selected (handled by backend)
 
     try {
       const token = localStorage.getItem('adminToken');
@@ -56,10 +49,9 @@ export default function CoursesManager() {
       const res = await fetch(url, {
         method: method,
         headers: { 
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
+          'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify(payload),
+        body: formData,
       });
       
       if (res.ok) {
@@ -144,8 +136,13 @@ export default function CoursesManager() {
               <textarea name="description" defaultValue={editingCourse?.description || ''} className="form-input" rows="3" required></textarea>
             </div>
             <div className="form-group" style={{ gridColumn: 'span 2' }}>
-              <label className="form-label">Course Thumbnail URL</label>
-              <input type="text" name="thumbnail" defaultValue={editingCourse?.thumbnail || '/images/default-course.jpg'} placeholder="https://example.com/image.jpg" className="form-input" />
+              <label className="form-label">Course Thumbnail (Upload Image)</label>
+              <input type="file" name="image" accept="image/*" className="form-input" />
+              {editingCourse && editingCourse.thumbnail && (
+                <p className="text-muted" style={{ fontSize: '0.8rem', marginTop: '5px' }}>Leave empty to keep current image.</p>
+              )}
+              {/* Hidden field to keep old thumbnail if no new image uploaded */}
+              {editingCourse && <input type="hidden" name="thumbnail" value={editingCourse.thumbnail} />}
             </div>
             <div style={{ gridColumn: 'span 2' }}>
               <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
