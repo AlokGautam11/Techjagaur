@@ -11,6 +11,9 @@ export const metadata = {
     description: 'Expert IT & Computer Training in Rewa, Madhya Pradesh.',
     type: 'website',
   },
+  verification: {
+    google: 'v9dU-_F75FPN1LE26uLKhPm8dRHY9UlqZLphQoMUGSw',
+  },
 };
 
 export default function RootLayout({ children }) {
