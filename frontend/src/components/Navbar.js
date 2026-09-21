@@ -32,7 +32,7 @@ export default function Navbar() {
         <ul className="nav-links">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/courses">Courses</Link></li>
-          <li><Link href="/#about">About Us</Link></li>
+          <li><Link href="/about">About Us</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
         
@@ -52,7 +52,7 @@ export default function Navbar() {
       <ul className="mobile-nav-links">
         <li><Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
         <li><Link href="/courses" onClick={() => setIsMobileMenuOpen(false)}>All Courses</Link></li>
-        <li><Link href="/#about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
+        <li><Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
         <li><Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact & Admissions</Link></li>
       </ul>
       <div style={{ marginTop: 'auto', padding: '20px', borderTop: '1px solid #eee' }}>

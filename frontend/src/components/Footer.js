@@ -25,6 +25,7 @@ export default function Footer() {
           <h4 style={{ marginBottom: '10px', fontWeight: '600', fontSize: '1rem' }}>Quick Links</h4>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.9rem' }}>
             <li><Link href="/" className="footer-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link></li>
+            <li><Link href="/about" className="footer-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link></li>
             <li><Link href="/courses" className="footer-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>All Courses</Link></li>
             <li><Link href="/contact" className="footer-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact & Admissions</Link></li>
           </ul>
